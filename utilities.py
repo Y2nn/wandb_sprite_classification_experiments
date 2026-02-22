@@ -15,7 +15,7 @@ from torchvision.utils import make_grid, save_image
 
 
 def get_device():
-    "Pick GPU if cuda is available, mps if Mac, else CPU"
+    """Pick GPU if cuda is available, mps if Mac, else CPU"""
     if torch.cuda.is_available():
         return torch.device("cuda")
     elif sys.platform == "darwin" and torch.backends.mps.is_available():
@@ -30,7 +30,7 @@ def _fig_bounds(x):
 
 
 def show_image(im, ax=None, figsize=None, title=None, **kwargs):
-    "Show a PIL or PyTorch image on `ax`."
+    """Show a PIL or PyTorch image on `ax`."""
     cmap = None
     # Handle pytorch axis order
     if isinstance(im, torch.Tensor):
